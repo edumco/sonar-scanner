@@ -6,6 +6,12 @@ ENV SONAR_VERSION=4.2.0.1873
 
 ENV ZIP=sonar-scanner-cli-${SONAR_VERSION}.zip
 
+ENV SONAR_SERVER = "http:localhost:3000/"
+
+ENV USERNAME = "sonarqube"
+
+ENV PASSWORD = "sonarqube"
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends wget && \
     wget ${SONAR_DOWNLOADS}/${ZIP} && \
