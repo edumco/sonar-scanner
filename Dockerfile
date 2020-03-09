@@ -13,12 +13,11 @@ ENV USERNAME = "sonarqube"
 ENV PASSWORD = "sonarqube"
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends wget && \
+    apt-get install -y --no-install-recommends wget unzip ca-certificates && \
     wget ${SONAR_DOWNLOADS}/${ZIP} && \
-    apt-get install -y unzip && \
     unzip /${ZIP} && \
     rm /${ZIP} && \
-    apt-get purge -y wget unzip && \
+    apt-get purge -y wget unzip ca-certificates && \
     apt-get autoremove -y && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
