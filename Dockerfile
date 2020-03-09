@@ -2,7 +2,7 @@ FROM node:lts-slim
 
 ENV SONAR_DOWNLOADS=https://binaries.sonarsource.com/Distribution/sonar-scanner-cli
 
-ENV SONAR_VERSION=4.2.0.1873
+ENV SONAR_VERSION=4.3.0.2102
 
 ENV ZIP=sonar-scanner-cli-${SONAR_VERSION}.zip
 
