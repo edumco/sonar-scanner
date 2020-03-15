@@ -26,7 +26,7 @@ RUN apt-get update && \
     echo 'deb http://ftp.de.debian.org/debian sid main' >> '/etc/apt/sources.list' && \
     apt-get -y update && \
     mkdir -p /usr/share/man/man1 && \
-    apt-get -y install openjdk-11-jre-headless && \
+    apt-get -y install --no-install-recommends openjdk-11-jre-headless && \
     apt-get autoremove -y && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
