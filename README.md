@@ -10,5 +10,6 @@ This image allows you to scan your source code and report results to SonarQube s
 
 Create a container with your source code folder attached
 
+```sh
 docker run -v /mysource:/mysource edumco/sonar-scanner
-
+```
