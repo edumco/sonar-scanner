@@ -10,7 +10,7 @@ ENV SONAR_SERVER = "http:localhost:3000/"
 
 ENV USERNAME = "sonarqube"
 
-ENV PASSWORD = "sonarqube"
+ENV PASSWORD = "sonarqube"docker
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends wget unzip ca-certificates && \
@@ -22,11 +22,10 @@ RUN apt-get update && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && \
-    echo 'deb http://ftp.de.debian.org/debian sid main' >> '/etc/apt/sources.list' && \
-    apt-get -y update && \
+RUN echo 'deb http://ftp.de.debian.org/debian sid main' >> '/etc/apt/sources.list' && \
     mkdir -p /usr/share/man/man1 && \
-    apt-get -y install openjdk-11-jre-headless && \
+    apt-get -y update && \
+    apt-get -y install --no-install-recommends openjdk-11-jre-headless && \
     apt-get autoremove -y && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
