@@ -1,10 +1,11 @@
 # Sonar Scanner 🐳
 
-![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/edumco/sonar-scanner) ![Docker Pulls](https://img.shields.io/docker/pulls/edumco/sonar-scanner) ![Docker Stars](https://img.shields.io/docker/stars/edumco/sonar-scanner)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/edumco/sonar-scanner)
 
 This image allows you to scan your source code and report results to SonarQube server.
 
-To see some use cases of Sonarqube see the [sonarqube-examples repository]()
+To see some use cases of Sonarqube see the [sonarqube-examples repository](https://github.com/edumco/sonarqube-examples)
 
 ## Usage
 
