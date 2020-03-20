@@ -10,7 +10,7 @@ ENV SONAR_SERVER = "http:localhost:3000/"
 
 ENV USERNAME = "sonarqube"
 
-ENV PASSWORD = "sonarqube"docker
+ENV PASSWORD = "sonarqube"
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends wget unzip ca-certificates && \
