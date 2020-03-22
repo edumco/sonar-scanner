@@ -9,22 +9,20 @@ To see some use cases of Sonarqube see the [sonarqube-examples repository](https
 
 ## Usage
 
-On your project add a sonar**\*\*** file
-
-    lkjsdlfkjldkjljkdfsljkdsflkj
-    lkjhgflsdjkglkfjglskj
-    hjsdklfjdslkjf
-    lkjfsdlkdsjl
-
 Create a container with your source code folder attached
 
 ```sh
-docker run \
-    -v /mysource:/mysource \
-    -e SONAR.HOST=$VAR1 \
-    -e SONAR.USER=$VAR2 \
-    -e SONAR.PASSWORD=$VAR3 \
-    edumco/sonar-scanner
+docker run -v /mysource:/mysource edumco/sonar-scanner:latest
+```
+
+Inside the container execute the folowing command
+
+```sh
+    sonar-scanner \
+    -Dsonar.host.url=YOUR_SONAR_URL \
+    -Dsonar.projectKey=YOUR_PROJECT_KEY \
+    -Dsonar.login==YOUR_USERNAQME \
+    -Dsonar.password=YOUR_PASSWORD \
 ```
 
 After scan execution the results are sent to the sonarqube server
