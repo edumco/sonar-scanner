@@ -1,4 +1,4 @@
-FROM node:lts-slim
+FROM node:13.8.0-buster-slim
 
 ENV SONAR_DOWNLOADS=https://binaries.sonarsource.com/Distribution/sonar-scanner-cli
 
