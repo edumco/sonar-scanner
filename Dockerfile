@@ -24,4 +24,4 @@ RUN echo 'deb http://ftp.de.debian.org/debian sid main' >> '/etc/apt/sources.lis
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
-CMD export PATH=$PATH:/sonar-scanner-${SONAR_VERSION}/bin && bash
+CMD ["/bin/bash/", "export PATH=$PATH:/sonar-scanner-${SONAR_VERSION}/bin && bash"]
