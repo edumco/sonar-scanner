@@ -1,4 +1,4 @@
-FROM node:13.10.1-buster-slim
+FROM debian:10-slim
 
 ENV SONAR_DOWNLOADS=https://binaries.sonarsource.com/Distribution/sonar-scanner-cli
 
@@ -20,6 +20,15 @@ RUN echo 'deb http://ftp.de.debian.org/debian sid main' >> '/etc/apt/sources.lis
     mkdir -p /usr/share/man/man1 && \
     apt-get -y update && \
     apt-get -y install --no-install-recommends openjdk-11-jre-headless && \
+    apt-get autoremove -y && \
+    apt-get clean -y && \
+    rm -rf /var/lib/apt/lists/*
+
+
+RUN sudo apt-get install -y --no-install-recommends curl software-properties-common && \
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo bash - && \
+    sudo apt-get install nodejs && \
+    sudo apt-get purge -y curl && \
     apt-get autoremove -y && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
