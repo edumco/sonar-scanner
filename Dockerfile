@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 FROM debian:10-slim
-=======
-FROM node:13.12.0-buster-slim
->>>>>>> 0d978ba24391ac1d0dd1be1f2996e665ce524ad5
 
 ENV SONAR_DOWNLOADS=https://binaries.sonarsource.com/Distribution/sonar-scanner-cli
 
