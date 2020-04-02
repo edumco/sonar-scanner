@@ -26,8 +26,8 @@ RUN echo 'deb http://ftp.de.debian.org/debian sid main' >> '/etc/apt/sources.lis
 
 
 RUN apt-get install -y --no-install-recommends curl software-properties-common && \
-    curl -sL https://deb.nodesource.com/setup_12.x | sudo bash - && \
-    apt-get install nodejs && \
+    curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    apt-get install --no-install-recommends nodejs && \
     apt-get purge -y curl && \
     apt-get autoremove -y && \
     apt-get clean -y && \
