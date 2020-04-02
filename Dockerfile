@@ -29,10 +29,10 @@ RUN echo 'deb http://ftp.de.debian.org/debian sid main' >> '/etc/apt/sources.lis
     rm -rf /var/lib/apt/lists/*
 
 
-RUN sudo apt-get install -y --no-install-recommends curl software-properties-common && \
+RUN apt-get install -y --no-install-recommends curl software-properties-common && \
     curl -sL https://deb.nodesource.com/setup_12.x | sudo bash - && \
-    sudo apt-get install nodejs && \
-    sudo apt-get purge -y curl && \
+    apt-get install nodejs && \
+    apt-get purge -y curl && \
     apt-get autoremove -y && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
