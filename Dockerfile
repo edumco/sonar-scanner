@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 FROM debian:10-slim
+=======
+FROM node:13.12.0-buster-slim
+>>>>>>> 0d978ba24391ac1d0dd1be1f2996e665ce524ad5
 
 ENV SONAR_DOWNLOADS=https://binaries.sonarsource.com/Distribution/sonar-scanner-cli
 
@@ -33,4 +37,4 @@ RUN sudo apt-get install -y --no-install-recommends curl software-properties-com
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
-CMD export PATH=$PATH:/sonar-scanner-${SONAR_VERSION}/bin && bash
+CMD ["/bin/bash/", "export PATH=$PATH:/sonar-scanner-${SONAR_VERSION}/bin && bash"]
