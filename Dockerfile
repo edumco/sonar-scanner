@@ -27,11 +27,11 @@ RUN echo 'deb http://ftp.de.debian.org/debian sid main' >> '/etc/apt/sources.lis
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends curl && \
-    curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    curl -sL https://deb.nodesource.com/setup_13.x | bash - && \
     apt-get install -y --no-install-recommends nodejs && \
     apt-get purge -y curl && \
     apt-get autoremove -y && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
-CMD ["/bin/bash/", "export PATH=$PATH:/sonar-scanner-${SONAR_VERSION}/bin && bash"]
+CMD export PATH=$PATH:/sonar-scanner-${SONAR_VERSION}/bin && bash
