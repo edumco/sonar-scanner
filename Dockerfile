@@ -19,7 +19,7 @@ RUN apt-get update && \
 RUN echo 'deb http://ftp.de.debian.org/debian sid main' >> '/etc/apt/sources.list' && \
     mkdir -p /usr/share/man/man1 && \
     apt-get -y update && \
-    apt-get -y install --no-install-recommends openjdk-8-jre-headless && \
+    apt-get -y install --no-install-recommends openjdk-14-jdk-headless && \
     apt-get autoremove -y && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
