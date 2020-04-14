@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM adoptopenjdk/openjdk14:debianslim-jre
 
 ENV SONAR_DOWNLOADS=https://binaries.sonarsource.com/Distribution/sonar-scanner-cli
 
@@ -16,22 +16,12 @@ RUN apt-get update && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
-RUN echo 'deb http://ftp.de.debian.org/debian sid main' >> '/etc/apt/sources.list' && \
-    mkdir -p /usr/share/man/man1 && \
-    apt-get -y update && \
-    apt-get -y install --no-install-recommends openjdk-14-jdk-headless && \
-    apt-get autoremove -y && \
-    apt-get clean -y && \
-    rm -rf /var/lib/apt/lists/*
-
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends curl && \
     curl -sL https://deb.nodesource.com/setup_13.x | bash - && \
     apt-get install -y --no-install-recommends nodejs && \
-    apt-get purge -y curl && \
     apt-get autoremove -y && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
-CMD export PATH=$PATH:/sonar-scanner-${SONAR_VERSION}/bin && bash
+CMD export PATH=$PATH:/sonar-scanner-${SONAR_VERSION}/bin && sh
