@@ -1,7 +1,8 @@
 # Sonar Scanner 🐳
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/edumco/sonar-scanner)
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/edumco/sonar-scanner)](https://hub.docker.com/r/edumco/sonar-scanner)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/51a42d5302834235a744e68aa1a6a3e0)](https://www.codacy.com/manual/edumco/sonar-scanner?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=edumco/sonar-scanner&amp;utm_campaign=Badge_Grade)
 
 This image allows you to scan your source code and report results to SonarQube server.
 
