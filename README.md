@@ -29,3 +29,7 @@ Inside the container execute the folowing command
 ```
 
 After scan execution the results are sent to the sonarqube server
+
+## License
+
+[GNU General Public License v3.0](LICENSE)
