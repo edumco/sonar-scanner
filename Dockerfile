@@ -1,5 +1,7 @@
 FROM adoptopenjdk/openjdk14:alpine-jre
 
+RUN apk add --no-cache nodejs-lts
+
 ENV SONAR_DOWNLOADS=https://binaries.sonarsource.com/Distribution/sonar-scanner-cli
 
 ENV SONAR_VERSION=4.3.0.2102
@@ -10,6 +12,8 @@ RUN wget ${SONAR_DOWNLOADS}/${ZIP} && \
     unzip /${ZIP} && \
     rm /${ZIP}
 
-RUN apk add --no-cache nodejs
+ENV SONNAR_PATH /sonar-scanner-${SONAR_VERSION}/bin
 
-CMD export PATH=$PATH:/sonar-scanner-${SONAR_VERSION}/bin && sh
+ENV PATH $SONNAR_PATH/bin:$PATH
+
+CMD ["sh"]
