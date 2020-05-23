@@ -8,9 +8,8 @@ ENV ZIP=sonar-scanner-cli-${SONAR_VERSION}.zip
 
 RUN wget ${SONAR_DOWNLOADS}/${ZIP} && \
     unzip /${ZIP} && \
-    rm /${ZIP} && \
-    rm -rf /var/cache/apk/*
+    rm /${ZIP}
 
-RUN apk add --update-cache nodejs
+RUN apk add --no-cache nodejs
 
 CMD export PATH=$PATH:/sonar-scanner-${SONAR_VERSION}/bin && sh
