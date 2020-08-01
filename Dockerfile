@@ -15,3 +15,5 @@ RUN wget ${SONAR_DOWNLOADS}/${ZIP} && \
 ENV SONAR_PATH /sonar-scanner-${SONAR_VERSION}/bin
 
 ENV PATH $SONAR_PATH:$PATH
+
+ENTRYPOINT ${SONAR_PATH}/sonar-scanner
