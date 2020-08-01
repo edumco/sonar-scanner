@@ -12,8 +12,6 @@ RUN wget ${SONAR_DOWNLOADS}/${ZIP} && \
     unzip /${ZIP} && \
     rm /${ZIP}
 
-ENV SONNAR_PATH /sonar-scanner-${SONAR_VERSION}/bin
+ENV SONAR_PATH /sonar-scanner-${SONAR_VERSION}/bin
 
-ENV PATH $SONNAR_PATH/bin:$PATH
-
-CMD ["sh"]
+ENV PATH $SONAR_PATH:$PATH
