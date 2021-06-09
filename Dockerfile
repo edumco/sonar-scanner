@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk14:alpine-jre
+FROM adoptopenjdk/openjdk16:alpine-jre
 
 RUN apk add --no-cache nodejs-lts
 
